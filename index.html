@@ -1,203 +1,280 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stroomuitval of Brandgevaar? - Elektrisch Veilig</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-        body {
-            background-color: #0b0f19;
-            color: #ffffff;
-            line-height: 1.5;
-            padding-bottom: 40px;
-        }
-        .top-banner {
-            background: #b91c1c;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 0.5px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 28px;
-            color: #facc15;
-            margin: 20px 0 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .subtitle {
-            font-size: 15px;
-            color: #d1d5db;
-            margin-bottom: 15px;
-        }
-        .usps {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-size: 13px;
-            color: #9ca3af;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        .section-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin: 30px 0 15px;
-            letter-spacing: 0.5px;
-            color: #ffffff;
-        }
-        .steps-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        .card {
-            background: #111827;
-            border: 1px solid #1f2937;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: left;
-        }
-        .card h3 {
-            font-size: 15px;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
-        .card p {
-            font-size: 13px;
-            color: #9ca3af;
-        }
-        .guarantees {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
-        .guarantee-box {
-            background: #111827;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: left;
-        }
-        .guarantee-box.orange { border: 1px solid #f97316; }
-        .guarantee-box.green { border: 1px solid #10b981; }
-        .guarantee-box h3 { font-size: 15px; margin-bottom: 8px; }
-        .guarantee-box p { font-size: 13px; color: #9ca3af; }
-        .pricing-box {
-            background: #111827;
-            border: 1px solid #374151;
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 30px;
-        }
-        .prices {
-            font-size: 26px;
-            font-weight: bold;
-            color: #facc15;
-            margin: 15px 0;
-        }
-        .pricing-box p {
-            font-size: 13px;
-            color: #9ca3af;
-        }
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(to right, #dc2626, #b91c1c);
-            color: white;
-            text-decoration: none;
-            padding: 18px 30px;
-            border-radius: 50px;
-            font-size: 18px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
-        .footer-note {
-            font-size: 12px;
-            color: #9ca3af;
-        }
-        @media(max-width: 600px) {
-            .guarantees { grid-template-columns: 1fr; }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spoed-elektricien 24/7 | Stroomuitval of brandgevaar?</title>
+<meta name="description" content="24/7 spoed-elektricien binnen 60-90 minuten ter plaatse. Vast tarief, 100% oplossingsgarantie en gratis kastsanering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a1a33;
+    --bg-dark: #060f20;
+    --card: #0f2447;
+    --card-border: #1f4177;
+    --yellow: #ffe600;
+    --red: #e02828;
+    --orange: #ff8a1f;
+    --green: #9be02a;
+    --cyan: #19c3e6;
+    --text: #ffffff;
+    --muted: #cfd9ea;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Roboto Condensed", Arial, sans-serif;
+    background: linear-gradient(180deg, #0b2347 0, #0a1a33 520px, #0a1a33 100%);
+    color: var(--text);
+    line-height: 1.4;
+    padding-bottom: 80px;
+  }
+  .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+  /* Top bar */
+  .topbar {
+    background: linear-gradient(180deg, #7a0f0f, #4a0808);
+    text-align: center;
+    padding: 14px 16px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+    font-size: clamp(.8rem, 2.4vw, 1.05rem);
+    border-bottom: 1px solid #a22;
+  }
+  .dot {
+    display: inline-block; width: 14px; height: 14px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #ff7070, #d00);
+    box-shadow: 0 0 8px #f33; margin-right: 8px; vertical-align: -1px;
+  }
+
+  /* Hero */
+  .hero { text-align: center; padding: 60px 0 40px; }
+  .hero h1 {
+    font-size: clamp(2.4rem, 8vw, 4.6rem);
+    font-weight: 900; line-height: 1.05; text-transform: uppercase;
+    text-shadow: 0 4px 20px rgba(0,0,0,.5);
+  }
+  .hero h1 span { color: var(--yellow); display: block; text-shadow: 0 0 24px rgba(255,230,0,.35); }
+  .hero p.lead { margin: 22px auto 18px; max-width: 560px; font-size: clamp(1.05rem, 3vw, 1.35rem); color: var(--muted); }
+  .checks { display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: center; font-size: 1.05rem; color: var(--muted); }
+  .checks li { list-style: none; }
+  .checks li::before { content: "✓"; color: var(--yellow); font-weight: 700; margin-right: 8px; }
+
+  /* Section titles */
+  h2.title {
+    text-align: center; text-transform: uppercase; font-weight: 700;
+    font-size: clamp(1.3rem, 4vw, 1.7rem); letter-spacing: .5px; margin: 56px 0 22px;
+  }
+
+  /* Banner */
+  .banner {
+    position: relative; display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    background: #050c1a; border: 2px solid transparent; border-radius: 14px;
+    background-image: linear-gradient(#050c1a, #050c1a), linear-gradient(90deg, #ff3b2f, #ffe600);
+    background-origin: border-box; background-clip: padding-box, border-box;
+    box-shadow: 0 0 24px rgba(255,80,40,.25);
+    padding: 22px 26px;
+    font-size: clamp(1.1rem, 3.6vw, 1.9rem); font-weight: 700; text-transform: uppercase;
+  }
+  .banner em { font-style: normal; color: var(--yellow); }
+  .badge {
+    flex: 0 0 auto; width: 112px; height: 112px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #ff5a4a, #b50f0f);
+    box-shadow: 0 0 28px rgba(255,50,40,.7);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; text-transform: uppercase; transform: rotate(-8deg);
+    margin: -34px -10px -34px 0; line-height: 1.05;
+  }
+  .badge b { font-size: 1.9rem; font-weight: 900; }
+  .badge small { font-size: .72rem; font-weight: 700; }
+
+  /* Steps */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .step {
+    background: linear-gradient(160deg, #102a52, #0b1d3d);
+    border: 1px solid var(--card-border); border-radius: 14px; padding: 18px;
+    box-shadow: 0 6px 20px rgba(0,0,0,.35), inset 0 0 20px rgba(40,110,220,.08);
+  }
+  .step .head { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .step .icon { font-size: 2rem; flex: 0 0 auto; filter: drop-shadow(0 0 8px currentColor); }
+  .step h3 { font-size: 1.2rem; font-weight: 700; line-height: 1.15; }
+  .step p { color: var(--muted); font-size: 1.05rem; }
+
+  /* Guarantees */
+  .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .gcard { border-radius: 14px; padding: 22px; border: 2px solid; position: relative; }
+  .gcard h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; display: flex; gap: 12px; align-items: center; }
+  .gcard p { color: var(--muted); font-size: 1.08rem; }
+  .gcard p b { color: var(--yellow); }
+  .g1 { border-color: var(--orange); background: linear-gradient(160deg, rgba(255,138,31,.22), rgba(60,30,10,.5)); box-shadow: 0 0 24px rgba(255,138,31,.3); }
+  .g2 { border-color: var(--green); background: linear-gradient(160deg, rgba(155,224,42,.18), rgba(30,50,10,.5)); box-shadow: 0 0 24px rgba(155,224,42,.25); }
+
+  /* Pricing */
+  .price-box {
+    background: #050c1a; border: 1px solid var(--card-border); border-radius: 14px;
+    padding: 30px 20px; text-align: center;
+  }
+  .prices { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 16px 28px; }
+  .price .amount { font-size: clamp(2.8rem, 9vw, 4.6rem); font-weight: 900; line-height: 1; }
+  .price.alt .amount { color: var(--yellow); }
+  .price .when { color: var(--muted); font-size: 1.05rem; margin-top: 6px; }
+  .prices .en { align-self: center; color: var(--muted); font-size: 1.3rem; }
+  .price-box .note { margin-top: 22px; color: var(--muted); font-size: 1.1rem; }
+
+  /* Upgrades */
+  .upgrade {
+    background: linear-gradient(160deg, #102a52, #0b1d3d); border: 1px solid var(--card-border);
+    border-radius: 14px; padding: 18px; text-align: center;
+  }
+  .upgrade h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; }
+  .upgrade h3 span { color: var(--yellow); }
+  .upgrade p { color: var(--muted); font-size: 1.05rem; }
+  .guarantee-line { text-align: center; margin-top: 18px; color: var(--muted); font-size: 1.1rem; }
+
+  /* CTA */
+  .cta-wrap { text-align: center; }
+  .cta {
+    display: block; text-decoration: none; color: #fff; text-transform: uppercase;
+    background: linear-gradient(180deg, #f24a4a, #c01818);
+    border-radius: 14px; padding: 22px 16px; font-weight: 700;
+    font-size: clamp(1.15rem, 4.2vw, 2rem);
+    box-shadow: 0 0 26px rgba(255,60,60,.5), inset 0 2px 0 rgba(255,255,255,.25);
+    transition: transform .15s, box-shadow .15s;
+    animation: pulse 2.2s infinite;
+  }
+  .cta:hover { transform: translateY(-2px); box-shadow: 0 0 36px rgba(255,60,60,.8); }
+  .cta-sub { margin-top: 14px; color: var(--muted); font-size: 1.05rem; }
+  @keyframes pulse { 0%,100% { box-shadow: 0 0 20px rgba(255,60,60,.4); } 50% { box-shadow: 0 0 38px rgba(255,60,60,.8); } }
+
+  /* Sticky mobile call button */
+  .sticky {
+    display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 50;
+    background: linear-gradient(180deg, #f24a4a, #c01818); color: #fff; text-decoration: none;
+    text-align: center; padding: 16px; font-weight: 700; text-transform: uppercase; font-size: 1.15rem;
+    box-shadow: 0 -4px 18px rgba(0,0,0,.5);
+  }
+
+  footer { text-align: center; color: #7f93b5; font-size: .9rem; padding: 40px 0 10px; }
+
+  @media (max-width: 820px) {
+    .steps { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .steps, .grid2 { grid-template-columns: 1fr; }
+    .banner { flex-direction: column; text-align: center; padding-bottom: 60px; }
+    .badge { margin: -20px 0 -80px; width: 96px; height: 96px; }
+    .badge b { font-size: 1.6rem; }
+    .sticky { display: block; }
+  }
+  @media (prefers-reduced-motion: reduce) { .cta { animation: none; } html { scroll-behavior: auto; } }
+</style>
 </head>
 <body>
 
-    <div class="top-banner">
-        🚨 SPOED-ELEKTRICIEN 24/7 BEREIKBAAR — BINNEN 60-90 MINUTEN TER PLAATSE
+<div class="topbar"><span class="dot"></span>Spoed-elektricien 24/7 bereikbaar — binnen 60-90 minuten ter plaatse</div>
+
+<header class="hero">
+  <div class="container">
+    <h1>Stroomuitval of <span>brandgevaar?</span></h1>
+    <p class="lead">Direct een veilige en herstelde woning. Onze gecertificeerde elektriciens lossen het direct op.</p>
+    <ul class="checks">
+      <li>Erkende vakmensen</li>
+      <li>24/7 actief</li>
+      <li>Geen verborgen kosten</li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="banner">
+    <div>De <em>24/7 brand- &amp; stroomveiligheid</em> interventie</div>
+    <div class="badge"><b>24/7</b><small>Bereikbaar<br>&amp; snel</small></div>
+  </div>
+
+  <h2 class="title">De stappen</h2>
+  <section class="steps">
+    <article class="step">
+      <div class="head"><span class="icon" style="color:var(--cyan)">📞</span><h3>Telefonische Pre-Triage</h3></div>
+      <p>Direct telefonisch veiligheidsadvies om risico's te beperken.</p>
+    </article>
+    <article class="step">
+      <div class="head"><span class="icon" style="color:var(--cyan)">🚐</span><h3>Prioritaire Aanrijding</h3></div>
+      <p>Binnen 60-90 minuten een gecertificeerd technicus voor de deur.</p>
+    </article>
+    <article class="step">
+      <div class="head"><span class="icon" style="color:#ff6a4a">🌡️</span><h3>Thermische &amp; Lekstroom Diagnose</h3></div>
+      <p>Smeulende kringen en lekstroom direct opsporen.</p>
+    </article>
+    <article class="step">
+      <div class="head"><span class="icon" style="color:var(--orange)">⏱️</span><h3>Stroomcontrole &amp; Lekstroom</h3></div>
+      <p>Smeulende kringen en lekstroom direct opsporen.</p>
+    </article>
+    <article class="step">
+      <div class="head"><span class="icon" style="color:#ff4a3a">⚡</span><h3>Direct Brandgevaar Neutraliseren</h3></div>
+      <p>Defecten veilig afkoppelen, overbruggen of vervangen.</p>
+    </article>
+    <article class="step">
+      <div class="head"><span class="icon" style="color:var(--cyan)">📋</span><h3>Veiligheidscertificaat &amp; Rapport</h3></div>
+      <p>Schriftelijke garantie dat je installatie weer 100% veilig is.</p>
+    </article>
+  </section>
+
+  <h2 class="title">Garanties &amp; extra's</h2>
+  <section class="grid2">
+    <article class="gcard g1">
+      <h3><span>🛡️</span>100% Oplossingsgarantie</h3>
+      <p>Geen oplossing of kunnen we het gevaar niet veiligstellen? Dan betaal je <b>€ 0,-</b> voor de interventie.</p>
+    </article>
+    <article class="gcard g2">
+      <h3><span>🎁</span>Gratis Kastsanering (t.w.v. € 75,-)</h3>
+      <p>We controleren en draaien direct alle klemmen in je zekeringkast vast om toekomstig brandgevaar te voorkomen.</p>
+    </article>
+  </section>
+
+  <h2 class="title">De all-in noodinvestering</h2>
+  <section class="price-box">
+    <div class="prices">
+      <div class="price">
+        <div class="amount">€ 245,-</div>
+        <div class="when">(overdag, ma-vr 08:00 - 18:00)</div>
+      </div>
+      <div class="en">en</div>
+      <div class="price alt">
+        <div class="amount">€ 365,-</div>
+        <div class="when">(avond, nacht &amp; weekend)</div>
+      </div>
     </div>
+    <p class="note">Vast tarief inclusief voorrijkosten, diagnose en het eerste uur herstelarbeid.<br>Geen verrassingen of uurlonen achteraf.</p>
+  </section>
 
-    <div class="container">
-        <h1>Stroomuitval of Brandgevaar?</h1>
-        <p class="subtitle">Direct een veilige en herstelde woning. Onze gecertificeerde elektriciens lossen het direct op.</p>
-        
-        <div class="usps">
-            <span>✓ Erkende vakmensen</span>
-            <span>✓ 24/7 actief</span>
-            <span>✓ Geen verborgen kosten</span>
-        </div>
+  <h2 class="title">Upgrade matrix</h2>
+  <section class="grid2">
+    <article class="upgrade">
+      <h3><span>Optie A:</span> Direct veilig herstel <span>(+ €149,-)</span></h3>
+      <p>Directe vervanging van defecte automaat of differentieelschakelaar incl. montage.</p>
+    </article>
+    <article class="upgrade">
+      <h3><span>Optie B:</span> Premium bescherming <span>(+ €249,-)</span></h3>
+      <p>Vervanging plus overspanningsbeveiliging en 5 jaar directe omruilgarantie.</p>
+    </article>
+  </section>
+  <p class="guarantee-line">Vaste-Prijs-Garantie: we starten nooit zonder jouw akkoord vooraf!</p>
 
-        <div class="section-title">DE 24/7 BRAND- & STROOMVEILIGHEID INTERVENTIE</div>
+  <section class="cta-wrap" style="margin-top:56px">
+    <a class="cta" href="tel:08001234567">📞 Bel direct de storingsdienst: 0800 - 12 34 567</a>
+    <p class="cta-sub">Onze dichtstbijzijnde technicus is direct onderweg.</p>
+  </section>
 
-        <div class="steps-grid">
-            <div class="card">
-                <h3>📞 Telefonische Pre-Triage</h3>
-                <p>Direct telefonisch veiligheidsadvies om risico's te beperken.</p>
-            </div>
-            <div class="card">
-                <h3>🚗 Prioritaire Aanrijding</h3>
-                <p>Binnen 60-90 minuten een gecertificeerd technicus voor de deur.</p>
-            </div>
-            <div class="card">
-                <h3>🔍 Thermische & Lekstroom Diagnose</h3>
-                <p>Smeulende kringen en lekstroom direct opsporen.</p>
-            </div>
-            <div class="card">
-                <h3>⚡ Direct Brandgevaar Neutraliseren</h3>
-                <p>Defecten veilig afkoppelen, overbruggen of vervangen.</p>
-            </div>
-        </div>
+</main>
 
-        <div class="section-title">GARANTIES & EXTRA'S</div>
+<footer class="container">&copy; <span id="y"></span> Spoed-elektricien. Alle rechten voorbehouden.</footer>
 
-        <div class="guarantees">
-            <div class="guarantee-box orange">
-                <h3>🛡️ 100% OPLOSSINGSGARANTIE</h3>
-                <p>Geen oplossing of kunnen we het gevaar niet veiligstellen? Dan betaal je € 0,- voor de interventie.</p>
-            </div>
-            <div class="guarantee-box green">
-                <h3>🎁 Gratis Kastsanering (t.w.v. € 75,-)</h3>
-                <p>We controleren en draaien direct alle klemmen in je zekeringkast vast om toekomstig brandgevaar te voorkomen.</p>
-            </div>
-        </div>
+<a class="sticky" href="tel:08001234567">📞 Bel direct: 0800 - 12 34 567</a>
 
-        <div class="pricing-box">
-            <div class="section-title" style="margin-top:0;">DE ALL-IN NOODINVESTERING</div>
-            <div class="prices">€ 245,- <span style="font-size:16px; color:#fff;">en</span> € 365,-</div>
-            <p>(overdag, ma-vr 08:00 - 18:00) &nbsp;|&nbsp; (avond, nacht & weekend)</p>
-            <p style="margin-top: 10px;">Vast tarief inclusief voorrijkosten, diagnose en het eerste uur herstelarbeid. Geen verrassingen of uurlonen achteraf.</p>
-        </div>
-
-        <div class="section-title">CALL TO ACTION (CTA)</div>
-        <a href="tel:08001234567" class="cta-button">📞 BEL DIRECT DE STORINGSDIENST: 0800 - 12 34 567</a>
-        <p class="footer-note">Onze dichtstbijzijnde technicus is direct onderweg.</p>
-    </div>
-
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
